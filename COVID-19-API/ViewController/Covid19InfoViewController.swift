@@ -28,7 +28,6 @@ class Covid19InfoViewController: UIViewController {
     private func pullCovidInfo() {
         pullDate()
         guard let req_url = URL(string: "https://covid19-japan-web-api.now.sh/api/v1/prefectures") else { return }
-        print(req_url)
         let req = URLRequest(url: req_url)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: req, completionHandler: {
@@ -38,12 +37,11 @@ class Covid19InfoViewController: UIViewController {
                 self.prefecturesList.removeAll()
                 let decoder = JSONDecoder()
                 let json = try decoder.decode([ResultJson].self, from: data!)
-                //print(json)
                 _ = json.map { self.prefecturesList.append(($0.name, $0.cases, $0.deaths)) }
                 print(self.prefecturesList)
                 self.tableView.reloadData()
             } catch {
-                print("エラーが出ました", error)
+                print("エラーが出ました:\(error)")
             }
         })
         task.resume()
