@@ -9,25 +9,27 @@
 /* Begin PBXBuildFile section */
 		DFF2E48524DB143B0043CAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2E48424DB143B0043CAEE /* AppDelegate.swift */; };
 		DFF2E48724DB143B0043CAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2E48624DB143B0043CAEE /* SceneDelegate.swift */; };
-		DFF2E48924DB143B0043CAEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2E48824DB143B0043CAEE /* ViewController.swift */; };
-		DFF2E48C24DB143B0043CAEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF2E48A24DB143B0043CAEE /* Main.storyboard */; };
+		DFF2E48924DB143B0043CAEE /* Covid19InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2E48824DB143B0043CAEE /* Covid19InfoViewController.swift */; };
 		DFF2E48E24DB143E0043CAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF2E48D24DB143E0043CAEE /* Assets.xcassets */; };
 		DFF2E49124DB143E0043CAEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF2E48F24DB143E0043CAEE /* LaunchScreen.storyboard */; };
 		DFF2E49A24DBAF440043CAEE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2E49824DBAF440043CAEE /* TableViewCell.swift */; };
 		DFF2E49B24DBAF440043CAEE /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF2E49924DBAF440043CAEE /* TableViewCell.xib */; };
+		DFF2E49D24DCEDC50043CAEE /* ResultJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2E49C24DCEDC50043CAEE /* ResultJson.swift */; };
+		DFF2E4A524DCF40F0043CAEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF2E4A324DCF40E0043CAEE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DFF2E48124DB143B0043CAEE /* COVID-19-API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COVID-19-API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF2E48124DB143B0043CAEE /* Covid19-Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid19-Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF2E48424DB143B0043CAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF2E48624DB143B0043CAEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DFF2E48824DB143B0043CAEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DFF2E48B24DB143B0043CAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DFF2E48824DB143B0043CAEE /* Covid19InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19InfoViewController.swift; sourceTree = "<group>"; };
 		DFF2E48D24DB143E0043CAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFF2E49024DB143E0043CAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFF2E49224DB143E0043CAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF2E49824DBAF440043CAEE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		DFF2E49924DBAF440043CAEE /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		DFF2E49C24DCEDC50043CAEE /* ResultJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultJson.swift; sourceTree = "<group>"; };
+		DFF2E4A424DCF40E0043CAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,7 @@
 		DFF2E48224DB143B0043CAEE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DFF2E48124DB143B0043CAEE /* COVID-19-API.app */,
+				DFF2E48124DB143B0043CAEE /* Covid19-Info.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,17 +62,42 @@
 		DFF2E48324DB143B0043CAEE /* COVID-19-API */ = {
 			isa = PBXGroup;
 			children = (
+				DFF2E49E24DCEE0B0043CAEE /* Model */,
+				DFF2E49F24DCEE1B0043CAEE /* View */,
+				DFF2E4A024DCEE320043CAEE /* ViewController */,
 				DFF2E48424DB143B0043CAEE /* AppDelegate.swift */,
 				DFF2E48624DB143B0043CAEE /* SceneDelegate.swift */,
-				DFF2E48824DB143B0043CAEE /* ViewController.swift */,
-				DFF2E48A24DB143B0043CAEE /* Main.storyboard */,
-				DFF2E49824DBAF440043CAEE /* TableViewCell.swift */,
-				DFF2E49924DBAF440043CAEE /* TableViewCell.xib */,
 				DFF2E48D24DB143E0043CAEE /* Assets.xcassets */,
 				DFF2E48F24DB143E0043CAEE /* LaunchScreen.storyboard */,
 				DFF2E49224DB143E0043CAEE /* Info.plist */,
 			);
 			path = "COVID-19-API";
+			sourceTree = "<group>";
+		};
+		DFF2E49E24DCEE0B0043CAEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFF2E49C24DCEDC50043CAEE /* ResultJson.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DFF2E49F24DCEE1B0043CAEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DFF2E49824DBAF440043CAEE /* TableViewCell.swift */,
+				DFF2E49924DBAF440043CAEE /* TableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DFF2E4A024DCEE320043CAEE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DFF2E48824DB143B0043CAEE /* Covid19InfoViewController.swift */,
+				DFF2E4A324DCF40E0043CAEE /* Main.storyboard */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,7 +117,7 @@
 			);
 			name = "COVID-19-API";
 			productName = "COVID-19-API";
-			productReference = DFF2E48124DB143B0043CAEE /* COVID-19-API.app */;
+			productReference = DFF2E48124DB143B0043CAEE /* Covid19-Info.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -131,10 +158,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF2E4A524DCF40F0043CAEE /* Main.storyboard in Resources */,
 				DFF2E49124DB143E0043CAEE /* LaunchScreen.storyboard in Resources */,
 				DFF2E49B24DBAF440043CAEE /* TableViewCell.xib in Resources */,
 				DFF2E48E24DB143E0043CAEE /* Assets.xcassets in Resources */,
-				DFF2E48C24DB143B0043CAEE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFF2E48924DB143B0043CAEE /* ViewController.swift in Sources */,
+				DFF2E48924DB143B0043CAEE /* Covid19InfoViewController.swift in Sources */,
+				DFF2E49D24DCEDC50043CAEE /* ResultJson.swift in Sources */,
 				DFF2E49A24DBAF440043CAEE /* TableViewCell.swift in Sources */,
 				DFF2E48524DB143B0043CAEE /* AppDelegate.swift in Sources */,
 				DFF2E48724DB143B0043CAEE /* SceneDelegate.swift in Sources */,
@@ -155,20 +183,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DFF2E48A24DB143B0043CAEE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DFF2E48B24DB143B0043CAEE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DFF2E48F24DB143E0043CAEE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DFF2E49024DB143E0043CAEE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DFF2E4A324DCF40E0043CAEE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFF2E4A424DCF40E0043CAEE /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -300,7 +328,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ryota.COVID-19-API";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Covid19-Info";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -318,7 +346,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ryota.COVID-19-API";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Covid19-Info";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

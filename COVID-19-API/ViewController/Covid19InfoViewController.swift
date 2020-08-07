@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Covid19InfoViewController: UIViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView! {
@@ -22,14 +22,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 60
-        
-        let dt = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "MdHHmm", options: 0, locale: Locale(identifier: "ja_JP"))
-        dateLabel.text = "\(dateFormatter.string(from: dt))時点"
+        pullCovidInfo()
     }
     
-    func pullCovidInfo() {
+    private func pullCovidInfo() {
+        pullDate()
         guard let req_url = URL(string: "https://covid19-japan-web-api.now.sh/api/v1/prefectures") else { return }
         print(req_url)
         let req = URLRequest(url: req_url)
@@ -51,6 +48,13 @@ class ViewController: UIViewController {
         })
         task.resume()
     }
+    
+    private func pullDate() {
+        let dt = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "MdHHmm", options: 0, locale: Locale(identifier: "ja_JP"))
+        dateLabel.text = "\(dateFormatter.string(from: dt))時点"
+    }
 
     @IBAction func reloadButton(_ sender: Any) {
         pullCovidInfo()
@@ -58,7 +62,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension Covid19InfoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         prefecturesList.count
@@ -69,19 +73,6 @@ extension ViewController: UITableViewDataSource {
         cell.configure(name: prefecturesList[indexPath.row].name, cases: prefecturesList[indexPath.row].cases, deaths: prefecturesList[indexPath.row].deaths)
         cell.backgroundColor = .white
         return cell
-    }
-    
-}
-
-struct ResultJson: Codable {
-    let name: String
-    let cases: Int
-    let deaths: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "name_ja"
-        case cases
-        case deaths
     }
     
 }

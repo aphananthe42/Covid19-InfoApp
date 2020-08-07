@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cpI-9E-Ao2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="7aj-4c-Wi0">
+            <objects>
+                <navigationController id="cpI-9E-Ao2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CEH-UM-zI8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.74509803919999995" green="0.89019607840000003" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nXt-cV-7lk" kind="relationship" relationship="rootViewController" id="qzP-Bl-UTc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AA1-ie-tS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-835" y="130"/>
+        </scene>
+        <!--COVID-19都道府県別情報-->
+        <scene sceneID="TeM-t1-h39">
+            <objects>
+                <viewController id="nXt-cV-7lk" customClass="Covid19InfoViewController" customModule="Covid19_Info" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YaG-Ck-bop">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dgy-ir-csd">
+                                <rect key="frame" x="0.0" y="148" width="414" height="748"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="nXt-cV-7lk" id="io4-vM-8bK"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4C-Gj-0Iy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="8yf-oV-iTj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dgy-ir-csd" firstAttribute="trailing" secondItem="TyR-kn-bjh" secondAttribute="trailing" id="EHD-ap-Ufh"/>
+                            <constraint firstAttribute="bottom" secondItem="dgy-ir-csd" secondAttribute="bottom" id="Rr7-Xt-UFe"/>
+                            <constraint firstItem="dgy-ir-csd" firstAttribute="leading" secondItem="TyR-kn-bjh" secondAttribute="leading" id="VKa-lk-En2"/>
+                            <constraint firstItem="b4C-Gj-0Iy" firstAttribute="trailing" secondItem="TyR-kn-bjh" secondAttribute="trailing" id="ita-YQ-maZ"/>
+                            <constraint firstItem="b4C-Gj-0Iy" firstAttribute="leading" secondItem="TyR-kn-bjh" secondAttribute="leading" id="jlL-Xa-50V"/>
+                            <constraint firstItem="b4C-Gj-0Iy" firstAttribute="top" secondItem="TyR-kn-bjh" secondAttribute="top" id="peC-WC-FvO"/>
+                            <constraint firstItem="dgy-ir-csd" firstAttribute="top" secondItem="b4C-Gj-0Iy" secondAttribute="bottom" id="waQ-u2-lqq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TyR-kn-bjh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="COVID-19都道府県別情報" id="jQt-qM-XeU">
+                        <barButtonItem key="rightBarButtonItem" title="更新" image="goforward" catalog="system" id="tuF-8z-mXu">
+                            <color key="tintColor" red="0.0078431372550000003" green="0.24313725489999999" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="reloadButton:" destination="nXt-cV-7lk" id="SsE-ag-ME5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="b4C-Gj-0Iy" id="prL-xg-eK3"/>
+                        <outlet property="tableView" destination="dgy-ir-csd" id="T75-b9-CLX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGD-d9-2Hs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="goforward" catalog="system" width="121" height="128"/>
+    </resources>
+</document>
